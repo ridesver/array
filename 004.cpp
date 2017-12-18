@@ -5,7 +5,7 @@ using namespace std;
 
 bool read(int *a) 
 {
-  char check;
+	char check;
 	string str;
 	getline(cin, str);
 	istringstream stream(str);
@@ -18,17 +18,7 @@ bool read(int *a)
 		return false;
 	return true;
 }
-int count(int * a) {
-	int k = 0;
-	for (int i = 0; i < 10; i++) {
-		for (int j = i; j < 10; j++){
-			if (a[i] > a[j]) {
-				k++;
-			}
-		}
-	}
-	return k;
-}
+
 int main()
 {
 	int a[10];
@@ -38,6 +28,15 @@ int main()
 		cout << "An error has occurred while reading numbers" << endl;
 		return 0;
 	}
-	cout << "Result:\n" << count(a) << endl;
+	int k = 0;
+	for (int i = 0; i < 10; i++) 
+	{
+		for (int j = i; j < 10; j++)
+		{
+			if (a[i] > a[j])
+				k++;
+		}
+	}
+	cout << "Result:\n" << k << endl;
     return 0;
 }
